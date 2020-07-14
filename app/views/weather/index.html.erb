@@ -1,0 +1,32 @@
+<h2>Simple Weather</h2>
+
+<div id="loader"><%= image_tag "loader.svg" %></div>
+
+<header>
+    <p id=local_adress><span></span>の天気</p>
+</header>
+
+<section>
+    <div id="current_weather">
+        <p class="title"><%= @now %></p>
+        <p class="ico"></p>
+        <p class="desc"></p>
+        <p class="temp"><span></span>℃</p>
+    </div>
+
+    <div id="today_weather">
+        <p class="title"><%= @today %></p>
+        <p class="ico"></p>
+        <p class="desc"></p>
+        <p class="max_temp"><span></span>℃</p>
+        <p class="min_temp"><span></span>℃</p>
+    </div>
+
+    <div id="tomorrow_weather">
+        <p class="title"><%= @tomorrow %></p>
+        <p class="ico"></p>
+        <p class="desc"></p>
+        <p class="max_temp"><span></span>℃</p>
+        <p class="min_temp"><span></span>℃</p>
+    </div>
+</section>
