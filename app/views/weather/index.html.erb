@@ -1,32 +1,63 @@
-<h2>Simple Weather</h2>
+<div id="container" class="clearfix">
 
-<div id="loader"><%= image_tag "loader.svg" %></div>
+    <h2>Simple Weather</h2>
 
-<header>
-    <p id=local_adress><span></span>の天気</p>
-</header>
+    <div id="loader"><%= image_tag "loader.svg" %></div>
 
-<section>
-    <div id="current_weather">
-        <p class="title"><%= @now %></p>
-        <p class="ico"></p>
-        <p class="desc"></p>
-        <p class="temp"><span></span>℃</p>
-    </div>
+    <header class="clearfix">
+        <p id=local_adress><span></span>の天気</p>
+    </header>
 
-    <div id="today_weather">
-        <p class="title"><%= @today %></p>
-        <p class="ico"></p>
-        <p class="desc"></p>
-        <p class="max_temp"><span></span>℃</p>
-        <p class="min_temp"><span></span>℃</p>
-    </div>
+    <section class="clearfix">
+        <div id="current_weather" class="weather_wrap">
+            <p class="title"><%= @now %></p>
 
-    <div id="tomorrow_weather">
-        <p class="title"><%= @tomorrow %></p>
-        <p class="ico"></p>
-        <p class="desc"></p>
-        <p class="max_temp"><span></span>℃</p>
-        <p class="min_temp"><span></span>℃</p>
-    </div>
-</section>
+            <div class="desc_wrap">
+                <div class="desc_inner_l">
+                    <p class="ico"></p>
+                </div>
+                <div class="desc_inner_r">
+                    <p class="desc"></p>
+                    <div class="list">
+                        <p class="temp"><span></span>°C</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="today_weather" class="weather_wrap">
+            <p class="title"><%= @today %></p>
+
+            <div class="desc_wrap">
+                <div class="desc_inner_l">
+                    <p class="ico"></p>
+                </div>
+                <div class="desc_inner_r">
+                    <p class="desc"></p>
+                    <div class="list">
+                        <p class="max_temp"><span></span>°C</p>
+                        <p class="min_temp"><span></span>°C</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tomorrow_weather" class="weather_wrap">
+            <p class="title"><%= @tomorrow %></p>
+
+            <div class="desc_wrap">
+                <div class="desc_inner_l">
+                    <p class="ico"></p>
+                </div>
+                <div class="desc_inner_r">
+                    <p class="desc"></p>
+                    <div class="list">
+                        <p class="max_temp"><span></span>°C</p>
+                        <p class="min_temp"><span></span>°C</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

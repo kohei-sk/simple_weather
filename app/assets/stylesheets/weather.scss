@@ -2,10 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-header,
-section {
-    display: none;
-}
+@import "config";
 
 #loader {
     width: 50px;
@@ -13,4 +10,141 @@ section {
     position: fixed;
     left: calc(50% - 25px);
     top: calc(50% - 25px);
+}
+
+#container {
+    @include wrap ();
+
+    h2 {
+        @include en();
+        font-size: 2.2em;
+        line-height: 100%;
+        width: 100%;
+        text-align: center;
+        padding: 1.5em 0 1em;
+    }
+
+    header {
+        opacity: 0;
+
+        #local_adress {
+            width: 100%;
+            text-align: center;
+            line-height: 100%;
+            padding-bottom: 2em;
+            font-size: 1.1em;
+
+            span {
+                font-size: 1.2em;
+            }
+        }
+    }
+
+    section {
+        opacity: 0;
+        display: flex;
+
+        @include sp {
+            flex-direction: column;
+        }
+
+        .weather_wrap {
+            background-color: #fff;
+            color: #2980B9;
+            text-align: center;
+            padding: 1.5em;
+            font-weight: 400;
+            margin: 0 .5em;
+            border-radius: 5px;
+            width: 100%;
+            max-width: calc(100% / 3);
+
+            @include sp {
+                max-width: 100%;
+                margin: 0 0 1em;
+            }
+
+            p.title {
+                background-color: #f1f1f1;
+                color: #929292;
+                font-size: 0.85em;
+                font-weight: 500;
+            }
+
+            .desc_wrap {
+                @include sp {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                }
+
+                .desc_inner_l {
+                    width: 100%;
+                    max-width: 100px;
+                    margin: 0 auto;
+
+                    @include sp {
+                        max-width: 0 1em;
+                        margin: 0;
+                    }
+
+                    p.ico {
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                }
+
+                .desc_inner_r {
+                    p.desc {
+                        color: #6d6d6d;
+                        line-height: 100%;
+                        padding-bottom: .6em;
+
+                        @include sp {
+                            padding: 0;
+                            margin: 0 1em 0 0;
+                        }
+                    }
+
+                    @include sp {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .list {
+
+                        p.temp,
+                        p.max_temp,
+                        p.min_temp {
+                            @include en();
+                            font-weight: 400;
+                            line-height: 100%;
+                            padding: .2em 0;
+
+                            span {
+                                font-size: 1.2em;
+                            }
+                        }
+
+                        p.temp {
+                            span {}
+                        }
+
+                        p.max_temp {
+                            color: #ce6262;
+
+                            span {}
+                        }
+
+                        p.min_temp {
+                            span {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }
